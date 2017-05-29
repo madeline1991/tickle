@@ -1,3 +1,3 @@
 Tickle::Engine.routes.draw do
-  resources :pricings, only: [:indexs]
+  resources :pricings, only: [:index]
 end
