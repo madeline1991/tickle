@@ -16,7 +16,15 @@ body, head, h1, form, ul, li, input, label, option, h2, h3, h4, section {
 }
 
 body {
-  padding: 25px 0;
+  background: #66c8c9;
+}
+
+.index {
+  width: 90%;
+  background: white;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 300px;
 }
 
 h1, h2, h3 {

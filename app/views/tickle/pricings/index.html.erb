@@ -1,46 +1,48 @@
-<h1>Taco Insurance Company of Kentucky and Lower Europe</h1>
+<section class="index">
+  <h1>Taco Insurance Company of Kentucky and Lower Europe</h1>
 
-<h2>Revolutionizing the way individuals receive insurance premiums. Have your claims paid in tacos!</h2>
-<h3>Receive a free quote today</h3>
+  <h2>Revolutionizing the way individuals receive insurance premiums. Have your claims paid in tacos!</h2>
+  <h3>Receive a free quote today</h3>
 
-<% if @errors %>
+  <% if @errors %>
   <ul>
     <% @errors.each do |error| %>
-      <li> <%= error %> </li>
+    <li> <%= error %> </li>
     <% end %>
   </ul>
-<% end %>
+  <% end %>
 
-<form action="<%= pricings_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <section class="age">
-    <label>Age</label>
-    <input type="number" name="pricings[age]" placeholder="Enter your age" value="">
-  </section>
-
-
-  <label>Gender</label>
-  <select type="button" name="pricings[gender]">
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-  </select>
-
-  <section class="conditions">
-    <label>Conditions</label>
-    <section>
-      <input class="pointer" type="checkbox" name="pricings[conditions][]" value="Allergies">
-      <label>Allergies</label>
+  <form action="<%= pricings_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <section class="age">
+      <label>Age</label>
+      <input type="number" name="pricings[age]" placeholder="Enter your age" value="">
     </section>
-    <section>
-      <input class="pointer" type="checkbox" name="pricings[conditions][]" value="Sleep Apnea">
-      <label>Sleep Apnea</label>
+
+
+    <label>Gender</label>
+    <select type="button" name="pricings[gender]">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+    <section class="conditions">
+      <label>Conditions</label>
+      <section>
+        <input class="pointer" type="checkbox" name="pricings[conditions][]" value="Allergies">
+        <label>Allergies</label>
+      </section>
+      <section>
+        <input class="pointer" type="checkbox" name="pricings[conditions][]" value="Sleep Apnea">
+        <label>Sleep Apnea</label>
+      </section>
+      <section>
+        <input class="pointer" type="checkbox" name="pricings[conditions][]" value="Heart Disease">
+        <label>Heart Disease</label>
+      </section>
     </section>
-    <section>
-      <input class="pointer" type="checkbox" name="pricings[conditions][]" value="Heart Disease">
-      <label>Heart Disease</label>
+    <section class="button">
+      <input class="pointer" type="submit" value="Get a quote">
     </section>
-  </section>
-  <section class="button">
-    <input class="pointer" type="submit" value="Get a quote">
-  </section>
-<form>
+    <form>
+</section>
