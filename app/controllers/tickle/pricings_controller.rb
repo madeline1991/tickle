@@ -3,8 +3,8 @@ require_dependency "tickle/application_controller"
 module Tickle
   class PricingsController < ApplicationController
     def create
+      debugger
       params = pricing_params
-
       @errors = []
       unless valid_age?(params["age"])
         @errors << age_errors(params["age"])

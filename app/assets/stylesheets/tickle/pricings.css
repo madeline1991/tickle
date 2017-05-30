@@ -3,7 +3,7 @@
   They will automatically be included in application.css.
 */
 
-body, head, h1, form, ul, li, input, label, option, h2, h3, h4 {
+body, head, h1, form, ul, li, input, label, option, h2, h3, h4, section {
   margin: 0;
   padding: 0;
   border: 0;
@@ -40,14 +40,15 @@ form {
   padding: 24px;
 }
 
-.age {
+.age, .conditions {
   display: flex;
   border: 1px solid grey;
   flex-direction: column;
   border-radius: 4px;
 }
 
-.age label {
+
+.age label, .conditions > label {
   font-weight: bold;
   border-bottom: 1px solid grey;
   padding: 10px;
@@ -61,14 +62,31 @@ select {
   width: 100px;
 }
 
+.conditions {
+  margin-top: 20px;
+}
+
+.conditions section {
+  margin: 5px 0 0 5px;
+}
+
+.conditions section:last-child {
+  margin-bottom: 5px;
+}
+
 .pointer:hover {
   cursor: pointer;
 }
 
+.button {
+  height: 22px;
+  margin: 20px 0 20px 0;
+}
+
 input[type="submit"] {
-  width: 200px;
+  width: 100%;
   background: #ee7832;
-  box-shadow: 0 0.125rem 0 #b65c27;
+  box-shadow: 0 6px 0 #b65c27;
   border-radius: 4px;
   color: white;
   padding: 10px 0px;
@@ -76,5 +94,8 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  box-shadow: 0 0.1rem 0 #b65c27;
+  transition: 0.5s;
+  transform: scaleX(3px);
+  box-shadow: 0 3px 0 #b65c27;
+  margin-top: 3px;
 }
