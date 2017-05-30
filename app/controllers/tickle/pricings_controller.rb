@@ -6,14 +6,20 @@ module Tickle
       params = pricing_params
 
       @errors = []
-      @errors << age_errors(params["age"])
-      @errors << gender_errors(params["gender"])
+      unless valid_age?(params["age"])
+        @errors << age_errors(params["age"])
+      end
+
+      if params["gender"].nil?
+        @errors << "Gender can't be blank"
+      end
 
       if @errors.empty?
         @price = calculate_price(params)
         render :create
       else
-        redirect_to pricings_url
+        # need this to be a redirect, not a render. throwing around errors on refresh and hitting this controller.
+        render :index
       end
     end
 
@@ -28,13 +34,14 @@ module Tickle
 
     def calculate_price(params)
       @price = 100
-      @price += age_cost(params["age"].to_i)
-      @price = @price * conditions(params["conditions"]) + @price
+      @price += age_cost(params["age"])
+      @price = (@price * conditions(params["conditions"])) + @price
       @price -= gender_deduction(params["gender"])
+      @price.round(0)
     end
 
     def age_cost(age)
-      (age - 18) / 5 * 20
+      (age.to_i - 18) / 5 * 20
     end
 
     def conditions(conditions)
@@ -52,6 +59,7 @@ module Tickle
           total += 0
         end
       end
+      debugger
       total
     end
 
@@ -59,18 +67,17 @@ module Tickle
       gender == "Female" ? 12 : 0
     end
 
+    def valid_age?(age)
+      age.to_i >= 18
+    end
+
     def age_errors(age)
       if age.nil?
-        @errors << "Age cannot be blank."
+        "Age cannot be blank."
       elsif age.to_i < 18
-        @errors << "You can only get a quote if you are 18 or over"
+       "You can only get a quote if you are 18 or over"
       end
     end
 
-    def gender_errors(gender)
-      if params["gender"].nil?
-        @errors << "Gender can't be blank"
-      end
-    end
   end
 end
