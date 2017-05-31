@@ -4,21 +4,22 @@ module Tickle
   class PricingsController < ApplicationController
     def create
       allowed_params = pricing_params
-      @errors = []
+      # debugger
+      flash[:errors] = []
       unless valid_age?(allowed_params["age"])
-        @errors << age_errors(allowed_params["age"])
+        flash[:errors] << age_errors(allowed_params["age"])
       end
 
       if allowed_params["gender"].nil?
-        @errors << "Gender can't be blank"
+        flash[:errors] << "Gender can't be blank"
       end
 
-      if @errors.empty?
+      if flash[:errors].empty?
         @price = calculate_price(allowed_params)
         render :create
       else
         # need this to be a redirect, not a render. throwing around errors on refresh and hitting this controller.
-        render :index
+        redirect_to pricings_url
       end
     end
 
