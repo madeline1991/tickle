@@ -89,7 +89,7 @@ select {
   margin: 5px 0 0 5px;
 }
 
-.conditions section:last-child {
+.conditions section:last-child, .gender section:last-child {
   margin-bottom: 5px;
 }
 
