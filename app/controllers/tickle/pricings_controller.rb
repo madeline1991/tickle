@@ -11,14 +11,13 @@ module Tickle
       end
 
       if allowed_params["gender"].nil?
-        flash[:errors] << "Gender can't be blank"
+        flash[:errors] << "You must select a gender"
       end
 
       if flash[:errors].empty?
         @price = calculate_price(allowed_params)
         render :create
       else
-        # need this to be a redirect, not a render. throwing around errors on refresh and hitting this controller.
         redirect_to pricings_url
       end
     end

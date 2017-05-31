@@ -3,6 +3,7 @@
   <h2>Revolutionizing the way individuals receive insurance premiums. Have your claims paid in tacos!</h2>
   <h3>Receive a free quote today</h3>
 
+<section class="errors-container">
   <% if flash[:errors] %>
   <ul class="errors">
     <% flash[:errors].each do |error| %>
@@ -10,6 +11,7 @@
     <% end %>
   </ul>
   <% end %>
+</section>
 
   <form action="<%= pricings_url %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
