@@ -54,7 +54,6 @@ module Tickle
           total += 0
         end
       end
-      debugger
       total
     end
 
