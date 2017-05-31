@@ -66,8 +66,8 @@ module Tickle
     end
 
     def age_errors(age)
-      if age.nil?
-        "Age cannot be blank."
+      if age == ""
+        "You must provide an age to get a quote"
       elsif age.to_i < 18
        "You can only get a quote if you are 18 or over"
       end
