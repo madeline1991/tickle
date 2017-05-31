@@ -3,8 +3,7 @@ require_dependency "tickle/application_controller"
 module Tickle
   class PricingsController < ApplicationController
     def create
-      allowed_params = pricing_params
-      # debugger
+      allowed_params = params[:pricings]
       flash[:errors] = []
       unless valid_age?(allowed_params["age"])
         flash[:errors] << age_errors(allowed_params["age"])
@@ -27,9 +26,6 @@ module Tickle
     end
 
     private
-    def pricing_params
-      params.require(:pricings).permit(:gender, :age, conditions: [])
-    end
 
     def calculate_price(params)
       @price = 100
