@@ -15,14 +15,14 @@ body, head, h1, form, ul, li, input, label, option, h2, h3, h4, section {
   font: inherit;
 }
 
-body {
+/*body {
   background: #66c8c9;
-}
+}*/
 
 .index {
-  width: 90%;
-  height: 67.5vh;
-  background: white;
+  /*width: 90%;
+  height: 67.5vh;*/
+  /*background: white;*/
   margin: auto;
   padding-top: 20px;
   padding-bottom: 300px;
@@ -36,16 +36,24 @@ h1, h2, h3 {
 h1 {
   font-weight: bold;
   font-size: 32px;
+  padding: 25px 0px;
+  border-bottom: 1px solid grey;
+  box-shadow: 1px 6px 9px -4px rgba(0, 0, 0, 0.22);
+  background: #66c8c9;
+  color: white;
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 28px;
   font-weight: bold;
   margin-top: 10px;
+  /*margin-top: 10px;*/
 }
 
 h3 {
-  margin-bottom: 20px;
+  font-size: 26px;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 form {
@@ -118,4 +126,22 @@ input[type="submit"]:hover {
   transform: scaleX(3px);
   box-shadow: 0 3px 0 #b65c27;
   margin-top: 3px;
+}
+
+.errors {
+  background: #66c8c9;
+  border-radius: 4px;
+  width: 200px;
+  padding: 10px;
+  margin: auto;
+  color: white;
+  font-weight: bold;
+}
+
+.errors li {
+  margin-bottom: 10px;
+}
+
+.errors li:last-child {
+  margin-bottom: 0px;
 }
