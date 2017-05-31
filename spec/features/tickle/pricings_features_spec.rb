@@ -50,7 +50,7 @@ module Tickle
           fill_in "Age", with: "130"
           choose "Male"
           click_on "Get a free quote"
-          expect(page).to have_content("Must be a valid age")
+          expect(page).to have_content("Age must be a valid age")
         end
 
         scenario "for a user who doesn't choose a gender" do

@@ -73,7 +73,7 @@ module Tickle
       elsif age.to_i < 18
        "You can only get a quote if you are 18 or over"
      elsif age.to_i > 129
-       "Must be a valid age"
+       "Age must be a valid age"
       end
     end
 
