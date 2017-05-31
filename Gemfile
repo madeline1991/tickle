@@ -8,15 +8,15 @@ gemspec
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', :require => false
 end
 
 group :test do
-  gem 'factory_girl_rails', :require => false
   gem 'faker'
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers'
-  gem 'rspec-rails'
 end
 
 # Declare any dependencies that are still in development here instead of in
