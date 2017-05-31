@@ -5,6 +5,7 @@ module Tickle
     def create
       allowed_params = params[:pricings]
       flash[:errors] = []
+
       unless valid_age?(allowed_params["age"])
         flash[:errors] << age_errors(allowed_params["age"])
       end
@@ -62,7 +63,8 @@ module Tickle
     end
 
     def valid_age?(age)
-      age.to_i >= 18
+      integer_age = age.to_i
+      integer_age >= 18 && integer_age < 130
     end
 
     def age_errors(age)
@@ -70,6 +72,8 @@ module Tickle
         "You must provide an age to get a quote"
       elsif age.to_i < 18
        "You can only get a quote if you are 18 or over"
+     elsif age.to_i > 129
+       "Must be a valid age"
       end
     end
 
