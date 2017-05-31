@@ -21,6 +21,7 @@ body {
 
 .index {
   width: 90%;
+  height: 67.5vh;
   background: white;
   margin: auto;
   padding-top: 20px;
@@ -58,7 +59,7 @@ form {
   padding: 24px;
 }
 
-.age, .conditions {
+.age, .conditions, .gender {
   display: flex;
   border: 1px solid grey;
   flex-direction: column;
@@ -66,7 +67,7 @@ form {
 }
 
 
-.age label, .conditions > label {
+.age label, .conditions > label, .gender > label {
   font-weight: bold;
   border-bottom: 1px solid grey;
   padding: 10px;
@@ -80,11 +81,11 @@ select {
   width: 100px;
 }
 
-.conditions {
+.conditions, .gender {
   margin-top: 20px;
 }
 
-.conditions section {
+.conditions section, .gender section {
   margin: 5px 0 0 5px;
 }
 

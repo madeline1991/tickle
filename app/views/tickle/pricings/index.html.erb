@@ -19,12 +19,19 @@
       <input type="number" name="pricings[age]" placeholder="Enter your age" value="">
     </section>
 
-
-    <label>Gender</label>
-    <select type="button" name="pricings[gender]">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-    </select>
+    <section class="gender">
+      <label>Gender</label>
+      <section>
+        <section>
+          <input type="radio" name="pricings[gender]" value="Female">
+          <label>Female</label>
+        </section>
+        <section>
+          <input type="radio" name="pricings[gender]" value="Male">
+          <label>Male</label>
+        </section>
+      </section>
+    </section>
 
     <section class="conditions">
       <label>Conditions</label>
@@ -33,12 +40,12 @@
         <label>Allergies</label>
       </section>
       <section>
-        <input class="pointer" type="checkbox" name="pricings[conditions][]" value="Sleep Apnea">
-        <label>Sleep Apnea</label>
-      </section>
-      <section>
         <input class="pointer" type="checkbox" name="pricings[conditions][]" value="Heart Disease">
         <label>Heart Disease</label>
+      </section>
+      <section>
+        <input class="pointer" type="checkbox" name="pricings[conditions][]" value="Sleep Apnea">
+        <label>Sleep Apnea</label>
       </section>
     </section>
     <section class="button">
