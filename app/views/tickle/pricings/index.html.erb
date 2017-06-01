@@ -4,12 +4,12 @@
   <h3>Receive a free quote today</h3>
 
 <section class="errors-container">
-  <% if flash[:errors] %>
-  <ul class="errors">
-    <% flash[:errors].each do |error| %>
-    <li> <%= error %> </li>
-    <% end %>
-  </ul>
+  <% unless flash[:errors].nil? || flash[:errors].empty? %>
+    <ul class="errors">
+      <% flash[:errors].each do |error| %>
+      <li> <%= error %> </li>
+      <% end %>
+    </ul>
   <% end %>
 </section>
 

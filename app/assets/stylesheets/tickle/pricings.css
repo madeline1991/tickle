@@ -23,17 +23,9 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-/*body {
-  background: #66c8c9;
-}*/
-
 .index, .create {
-  /*width: 90%;
-  height: 67.5vh;*/
-  /*background: white;*/
   margin: auto;
   padding-top: 20px;
-  /*padding-bottom: 300px;*/
 }
 
 h1, h2, h3 {
@@ -55,7 +47,6 @@ h2 {
   font-size: 28px;
   font-weight: bold;
   margin-top: 10px;
-  /*margin-top: 10px;*/
 }
 
 h3 {
