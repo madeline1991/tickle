@@ -5,9 +5,9 @@ module Tickle
     routes { Tickle::Engine.routes }
     describe "GET #index" do
       it "renders the pricings index" do
-        get :index
+        get :new
         expect(response).to be_success
-        expect(response).to render_template(:index)
+        expect(response).to render_template(:new)
       end
     end
     describe "POST #create" do
@@ -24,7 +24,7 @@ module Tickle
         context "if age and gender are not given by user" do
           it "redirect to pricings index" do
             post :create, params: { pricings: { age: "" } }
-            expect(response).to redirect_to(pricings_url)
+            expect(response).to redirect_to(new_pricing_url)
             expect(flash[:errors]).to be_present
           end
         end
@@ -32,7 +32,7 @@ module Tickle
         context "if age is not given by user" do
           it "redirect to pricings index" do
             post :create, params: { pricings: { age: "", gender: "Male" } }
-            expect(response).to redirect_to(pricings_url)
+            expect(response).to redirect_to(new_pricing_url)
             expect(flash[:errors]).to be_present
           end
         end
@@ -40,7 +40,7 @@ module Tickle
         context "if gender is not given by user" do
           it "redirect to pricings index" do
             post :create, params: { pricings: { age: 35 } }
-            expect(response).to redirect_to(pricings_url)
+            expect(response).to redirect_to(new_pricing_url)
             expect(flash[:errors]).to be_present
           end
         end

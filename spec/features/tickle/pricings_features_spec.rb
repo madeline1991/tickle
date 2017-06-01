@@ -5,7 +5,7 @@ module Tickle
   feature "quote features", type: :feature do
     feature "making a new price quote" do
       before(:each) do
-        visit "/tickle/pricings"
+        visit "/tickle/pricings/new"
       end
 
       context "with valid params" do

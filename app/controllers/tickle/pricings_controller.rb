@@ -18,12 +18,12 @@ module Tickle
         @price = calculate_price(allowed_params)
         render :create
       else
-        redirect_to pricings_url
+        redirect_to new_pricing_url
       end
     end
 
-    def index
-      render :index
+    def new
+      render :new
     end
 
     private
