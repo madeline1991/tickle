@@ -29,4 +29,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Design Decisions
 
-Tickle is a mountable engine. It was created as an engine instead of a full-stack application to take advantage of PolicyGenius' already existing platform and make it easy to get an MVP up and running or remove it from the application in case TICKLE does not succeed in the future. Everything, including views, are packaged into engine to make it inclusive of both the front-end and the back-end. 
+Tickle is a mountable engine. It was created as an engine instead of a full-stack application to take advantage of PolicyGenius' already existing platform and make it easy to get an MVP up and running or remove it from the application in case TICKLE does not succeed in the future. Everything, including views, are packaged into engine to make it inclusive of both the front-end and the back-end. Tickle is a mountable engine because of its isolated namespace. As it grows, having an isolated namespace will help avoid conflicts of routes in the future. 
