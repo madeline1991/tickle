@@ -27,13 +27,13 @@ input[type=number]::-webkit-outer-spin-button {
   background: #66c8c9;
 }*/
 
-.index {
+.index, .create {
   /*width: 90%;
   height: 67.5vh;*/
   /*background: white;*/
   margin: auto;
   padding-top: 20px;
-  padding-bottom: 300px;
+  /*padding-bottom: 300px;*/
 }
 
 h1, h2, h3 {
@@ -69,11 +69,14 @@ form {
   flex-direction: column;
   margin: auto;
   width: 400px;
+  padding: 24px;
+}
+
+form, .price {
   border: 1px solid #66c8c9;
   border-top-width: thick;
   border-bottom-width: thick;
   border-radius: 4px;
-  padding: 24px;
 }
 
 .age, .conditions, .gender {
@@ -156,4 +159,19 @@ input[type="submit"]:hover {
 
 .errors li:last-child {
   margin-bottom: 0px;
+}
+
+.create h2 {
+  margin-bottom: 20px;
+}
+
+.price {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 1px 6px 9px -4px rgba(0, 0, 0, 0.22);
 }
