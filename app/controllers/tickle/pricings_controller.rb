@@ -18,11 +18,14 @@ module Tickle
         @price = calculate_price(allowed_params)
         render :create
       else
-        redirect_to new_pricing_url
+        redirect_to new_pricing_url(age: allowed_params["age"], gender: allowed_params["gender"], conditions: allowed_params["conditions"])
       end
     end
 
     def new
+      @age = params[:age] || ""
+      @gender = params[:gender] || nil
+      @conditions = params[:conditions] || []
       render :new
     end
 

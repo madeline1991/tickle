@@ -1,3 +1,25 @@
+
+<% if @gender == "Female"%>
+  <% female = "checked" %>
+  <% male = "" %>
+<% elsif @gender == "Male" %>
+  <% female = "" %>
+  <% male = "checked" %>
+<% end %>
+
+<% if @conditions.include?("Allergies") %>
+  <%= allergies = "checked" %>
+<% end %>
+
+<% if @conditions.include?("Heart Disease") %>
+  <%= heart_disease = "checked" %>
+<% end %>
+
+<% if @conditions.include?("Sleep Apnea") %>
+  <%= sleep_apnea = "checked" %>
+<% end %>
+
+<%debugger%>
 <h1>Taco Insurance Company of Kentucky and Lower Europe</h1>
 <section class="index">
   <h2>Revolutionizing the way individuals receive insurance premiums. Have your claims paid in tacos!</h2>
@@ -17,18 +39,18 @@
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <section class="age">
       <label>Age</label>
-      <input id="Age" type="number" name="pricings[age]" placeholder="Enter your age" value="">
+      <input id="Age" type="number" name="pricings[age]" placeholder="Enter your age" value="<%= @age %>">
     </section>
 
     <section class="gender">
       <label>Gender</label>
       <section>
         <section>
-          <input id="Female" type="radio" name="pricings[gender]" value="Female">
+          <input id="Female" <%= female %> type="radio" name="pricings[gender]" value="Female">
           <label>Female</label>
         </section>
         <section>
-          <input id="Male" type="radio" name="pricings[gender]" value="Male">
+          <input id="Male" <%= male %> type="radio" name="pricings[gender]" value="Male">
           <label>Male</label>
         </section>
       </section>
@@ -37,15 +59,15 @@
     <section class="conditions">
       <label>Conditions</label>
       <section>
-        <input id="Allergies" class="pointer" type="checkbox" name="pricings[conditions][]" value="Allergies">
+        <input id="Allergies" <%= allergies %> class="pointer" type="checkbox" name="pricings[conditions][]" value="Allergies">
         <label>Allergies</label>
       </section>
       <section>
-        <input id="Heart Disease" class="pointer" type="checkbox" name="pricings[conditions][]" value="Heart Disease">
+        <input id="Heart Disease" <%= heart_disease %> class="pointer" type="checkbox" name="pricings[conditions][]" value="Heart Disease">
         <label>Heart Disease</label>
       </section>
       <section>
-        <input id="Sleep Apnea" class="pointer" type="checkbox" name="pricings[conditions][]" value="Sleep Apnea">
+        <input id="Sleep Apnea" <%= sleep_apnea %> class="pointer" type="checkbox" name="pricings[conditions][]" value="Sleep Apnea">
         <label>Sleep Apnea</label>
       </section>
     </section>
