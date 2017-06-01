@@ -26,3 +26,7 @@ Contribution directions go here.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Design Decisions
+
+Tickle is a mountable engine. It was created as an engine instead of a full-stack application to take advantage of PolicyGenius' already existing platform and make it easy to get an MVP up and running or remove it from the application in case TICKLE does not succeed in the future. Everything, including views, are packaged into engine to make it inclusive of both the front-end and the back-end. 
